@@ -2,6 +2,7 @@
 
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -14,7 +15,9 @@ const Navbar = () => {
             </h1>
           </div>
           <ul className=" gap-8 font-medium hidden sm:flex">
-            <li>Home</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
             <li>About</li>
             <li>Contact</li>
           </ul>

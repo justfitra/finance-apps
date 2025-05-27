@@ -5,11 +5,20 @@ export interface ButtonProps {
   text: string;
   type?: "href" | "button";
   href?: string;
+  className?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, type = "button", href }) => {
-  const style =
-    "bg-primary text-dark px-5 font-medium py-3 rounded-lg mt-5 inline-block hover:bg-secondary transition-colors";
+const Button: React.FC<ButtonProps> = ({
+  text,
+  type = "button",
+  href,
+  className,
+}) => {
+  if (!className) {
+    className = "bg-primary text-dark px-5 font-medium py-3 rounded-lg mt-5";
+  }
+
+  const style = `${className} inline-block hover:bg-secondary transition-colors`;
 
   if (!text && typeof text !== "string") {
     throw new Error("Invalid text prop: It must be a non-empty string.");
